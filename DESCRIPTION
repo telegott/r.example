@@ -23,3 +23,4 @@ Imports:
 Suggests: 
     devtools,
     usethis
+Config/testthat/edition: 3
