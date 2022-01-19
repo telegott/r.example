@@ -19,3 +19,5 @@ Make sure `renv` is installed globally, then:
 - `usethis::use_package("lintr")`
 - `usethis::use_package("covr")`
 - `usethis::use_github_actions()`
+
+On GitHub under settings, make sure that in the section "Merge Button", only "Allow squash merging" is active. Also check "Automatically delete head branches"
