@@ -20,4 +20,7 @@ Make sure `renv` is installed globally, then:
 - `usethis::use_package("covr")`
 - `usethis::use_github_actions()`
 
-On GitHub under settings, make sure that in the section "Merge Button", only "Allow squash merging" is active. Also check "Automatically delete head branches"
+On GitHub, 
+- under settings/Options make sure that in the section "Merge Button", only "Allow squash merging" is active. Also check "Automatically delete head branches"
+- under settings/Branches click add "Add rule" enter "main" under "Branch name pattern" and check "Require a pull request before merging " and "Require status checks to pass before merging"
+
