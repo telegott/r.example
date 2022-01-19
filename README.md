@@ -18,5 +18,4 @@ Make sure `renv` is installed globally, then:
 - `usethis::use_package("styler")`
 - `usethis::use_package("lintr")`
 - `usethis::use_package("covr")`
-
-
+- `usethis::use_github_actions()`
