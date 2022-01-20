@@ -42,6 +42,10 @@ jobs:
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
           renv::restore()
 
+      - name: Lint
+        run: lintr::lint_package()
+        shell: Rscript {0}
+
       - name: Check R Package
         uses: r-lib/actions/check-r-package@v1
 
@@ -49,6 +53,10 @@ jobs:
         if: always()
         run: find check -name 'testthat.Rout*' -exec cat '{}' \; || true
         shell: bash
+
+      - name: Test coverage
+        run: covr::codecov()
+        shell: Rscript {0}
 
       - name: Upload check results
         if: failure()
