@@ -28,8 +28,6 @@ On GitHub,
 
 Then push your changes on a new branch.
 
-
-
 Workflows:
 - building the packages add _everything_ in your package directory to your build process. Exclude _everything_ that's not needed for that to the `.Rbuildignore` (be aware it has a stricter syntax than other ignore-files, check examples).
 - _Never_ install the package locally!
