@@ -14,6 +14,7 @@ Add basic development-only packages:
 
 Make sure `renv` is installed globally, then:
 
+- `use_mit_license()` (or something else)
 - `usethis::use_testthat()`
 - `usethis::use_package("styler")`
 - `usethis::use_package("lintr")`
@@ -37,4 +38,5 @@ Workflows:
 - To generate a test coverage report do `covr::report()`
 - Never do `source()` or `library()`. After `devtools::load_all()`, all code is in the workspace in the newest version.
 - If you need functions from other packages, use `@import` or `importFrom` comments. Do `devtools::document()` after such changes to automatically adapt the `NAMESPACE` file which handles what your package sees from the outer world and what's available from your package to the outer world.
-- All files in `R/` should have an equivalent in 
+- All files in `R/` should have an equivalent in `tests/testthat`, e.g. `R/helpers.R` corresponds to `tests/testthat/test-helpers.R`
+- If you don't need functions from other packages often, use the `package::function()` notation, e.g. `dplyr::mutate` (bad example). If you need single functions often, use `@importFrom` comments. If you need the whole package all the time, use `@import`, but this can clutter your namespace. What you put in the comments above function `a` is _also_ available to function `b`, it is _not_ bound to the function, so pay attention to not import unnecessary functions.
