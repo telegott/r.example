@@ -42,7 +42,8 @@ jobs:
           if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
           renv::restore()
 
-      - uses: r-lib/actions/check-r-package@v1
+      - name: Check R Package
+        uses: r-lib/actions/check-r-package@v1
 
       - name: Show testthat output
         if: always()
