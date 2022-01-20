@@ -14,11 +14,13 @@ Add basic development-only packages:
 
 Make sure `renv` is installed globally, then:
 
-- `use_mit_license()` (or something else)
+- `usethis::use_mit_license()` (or something else)
 - `usethis::use_testthat()`
 - `usethis::use_package("styler")`
 - `usethis::use_package("lintr")`
 - `usethis::use_package("covr")`
+- `usethis::use_package("htmltools")`
+- `usethis::use_package("DT")`
 - `usethis::use_github_actions()`
 - `renv::snapshot(type="explicit")`
 
