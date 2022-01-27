@@ -11,6 +11,6 @@ process_all <- function(inputs) {
   failures <- results %>%
     purrr::map("error") %>%
     purrr::compact() %>%
-    purrr::map(~as.character(.x$message))
+    purrr::map(~ as.character(.x$message))
   list(results = successes, failures = failures)
 }
