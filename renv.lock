@@ -380,6 +380,13 @@
       "Repository": "CRAN",
       "Hash": "8974a907200fc9948d636fe7d85ca9fb"
     },
+    "mockery": {
+      "Package": "mockery",
+      "Version": "0.4.2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "313fa6504824ba5aab9308412135fb5f"
+    },
     "openssl": {
       "Package": "openssl",
       "Version": "1.4.4",
