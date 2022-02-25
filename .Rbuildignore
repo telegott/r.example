@@ -1,5 +1,8 @@
 ^renv$
 ^renv\.lock$
+^scripts$
 ^\.github$
 ^LICENSE\.md$
 ^.idea$
+^.dockerignore$
+^Dockerfile$
