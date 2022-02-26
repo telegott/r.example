@@ -2,20 +2,11 @@
 
 TAG=r.example-test
 
-docker build --tag $TAG --target=base -f Dockerfile .
-
-params=()
-
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-  params+=(--network=host)
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-  params+=(--network=bridge)
-elif [[ $(uname -a) == *'WSL'* ]]; then
-  echo 'Not specifying network on WSL'
-else
-  echo "Unknown OS environment, exiting ..."
-  exit 1
-fi
+docker build \
+  --tag $TAG \
+  --target=base \
+  --file Dockerfile \
+  .
 
 docker run \
     --rm \
