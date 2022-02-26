@@ -21,8 +21,6 @@ jobs:
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v1
-        with:
-          use-public-rspm: true
 
       - name: Install linux libraries
         run: |
