@@ -15,5 +15,5 @@ ENV RENV_CONFIG_REPOS_OVERRIDE='https://cran.microsoft.com/'
 WORKDIR app
 COPY renv.lock renv.lock
 RUN set -xe \
-	&& R --vanilla -e 'renv::restore()'
+	&& R -e 'renv::restore()'
 COPY . .
