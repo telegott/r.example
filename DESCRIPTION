@@ -17,6 +17,7 @@ Imports:
     purrr
 Suggests:
     covr,
+    DT,
     htmltools,
     mockery,
     devtools,
