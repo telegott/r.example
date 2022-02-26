@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [main, master]
 
-env:
-  RENV_CONFIG_REPOS_OVERRIDE: https://cran.microsoft.com/
-
 name: R-CMD-check
 
 jobs:
