@@ -6,9 +6,6 @@ on:
   pull_request:
     branches: [main, master]
 
-env:
-  RENV_CONFIG_REPOS_OVERRIDE: https://cloud.r-project.org/
-
 name: R-CMD-check
 
 jobs:
@@ -24,8 +21,6 @@ jobs:
 
       - name: Setup R
         uses: r-lib/actions/setup-r@v1
-        with:
-          use-public-rspm: true
 
       - name: Install linux libraries
         run: |
