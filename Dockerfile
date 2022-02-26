@@ -11,7 +11,7 @@ RUN set -xe \
         libxml2-dev \
     && rm -rf /var/lib/apt/lists/* \
     && R -e 'install.packages("renv")'
-ENV RENV_CONFIG_REPOS_OVERRIDE='https://packagemanager.rstudio.com/all/__linux__/focal/latest'
+ENV RENV_CONFIG_REPOS_OVERRIDE='https://cran.microsoft.com/'
 WORKDIR app
 COPY renv.lock renv.lock
 RUN set -xe \
