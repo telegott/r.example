@@ -12,7 +12,17 @@ RUN set -xe \
     && rm -rf /var/lib/apt/lists/* \
     && R -e 'install.packages("renv")'
 WORKDIR app
+
+FROM base AS with-packages
 COPY renv.lock renv.lock
 RUN set -xe \
 	&& R -e 'renv::restore()'
 COPY . .
+
+FROM base AS renv
+#COPY .Rprofile .Rprofile
+COPY DESCRIPTION DESCRIPTION
+COPY renv/settings.dcf renv/settings.dcf
+RUN set -xe \
+    && R -e 'renv::init(bare=TRUE)' \
+	&& R -e 'renv::install()'

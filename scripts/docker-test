@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 TAG=r.example-test
+TARGET=with-packages
 
 docker build \
   --tag $TAG \
-  --target=base \
+  --target=$TARGET \
   --file Dockerfile \
   .
 

@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+TAG=r.example-renv
+TARGET=renv
+HOST_PATH=$(pwd)
+GUEST_PATH=/app/
+
+docker build \
+  --tag $TAG \
+  --target=$TARGET \
+  --file Dockerfile \
+  .
+
+docker run \
+    --rm \
+    $TAG \
+    ls -a && \
+    Rscript -e "renv::status()" \
+    && Rscript -e "renv::snapshot()"
