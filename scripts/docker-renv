@@ -2,8 +2,8 @@
 
 TAG=r.example-renv
 TARGET=renv
-HOST_PATH=$(pwd)
-GUEST_PATH=/app/
+#HOST_PATH=$(pwd) # try to write clean lockfile to host filesystem later.
+#GUEST_PATH=/app/
 
 docker build \
   --tag $TAG \
@@ -14,6 +14,6 @@ docker build \
 docker run \
     --rm \
     $TAG \
-    ls -a && \
-    Rscript -e "renv::status()" \
+    ls -a \
+    && Rscript -e "renv::status()" \
     && Rscript -e "renv::snapshot()"
