@@ -3,7 +3,7 @@ test_that("with valid parameters, does correct thing", {
   subset_filepaths <- c('a/b.tif', 'a/b.tif', 'a/c.tif')
 
   list_files_mock <- function(path, full.names, recursive, pattern) {
-    condition <- path == 'the-directory' &&
+    condition <- path == "the-directory" &&
       full.names &&
       recursive &&
       pattern == "mohp_europe_*.*tif"
@@ -32,5 +32,5 @@ test_that("with valid parameters, does correct thing", {
   mockery::stub(simplified_clip, ".read_and_clip_stars", .read_and_clip_stars_mock)
   expect_no_error <- purrr::partial(expect_error, regexp = NA)
 
-  expect_no_error(simplified_clip('the-directory'))
+  expect_no_error(simplified_clip("the-directory"))
 })
