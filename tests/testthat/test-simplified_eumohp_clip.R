@@ -30,7 +30,7 @@ test_that("with valid parameters, does correct thing", {
   mockery::stub(simplified_clip, "base::list_files", list_files_mock)
   mockery::stub(simplified_clip, "subset_it", subset_it_mock)
   mockery::stub(simplified_clip, ".read_and_clip_stars", .read_and_clip_stars_mock)
-  expect_no_error <- purrr::partial(expect_error, regexp = NA)
 
+  expect_no_error <- purrr::partial(expect_error, regexp = NA)
   expect_no_error(simplified_clip("the-directory"))
 })
