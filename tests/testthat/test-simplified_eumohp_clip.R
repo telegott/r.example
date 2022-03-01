@@ -10,7 +10,7 @@ test_that("with valid parameters, does correct thing", {
     if (!condition) {
       stop("hupsi, wrong arguments")
     }
-    all_filepaths
+    1
   }
 
   subset_it_mock <- function(filepaths) {
@@ -27,10 +27,9 @@ test_that("with valid parameters, does correct thing", {
     # if function only has side effects, nothing to return
   }
 
-  mockery::stub(simplified_clip, "base::list_files", list_files_mock)
+  mockery::stub(simplified_clip, "list.files", list_files_mock)
   mockery::stub(simplified_clip, "subset_it", subset_it_mock)
   mockery::stub(simplified_clip, ".read_and_clip_stars", .read_and_clip_stars_mock)
 
-  expect_no_error <- purrr::partial(expect_error, regexp = NA)
-  expect_no_error(simplified_clip("the-directory"))
+  expect_error(simplified_clip("the-directory"), NA)
 })
