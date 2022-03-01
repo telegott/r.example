@@ -10,7 +10,7 @@ test_that("with valid parameters, does correct thing", {
     if (!condition) {
       stop("hupsi, wrong arguments")
     }
-    1
+    all_filepaths
   }
 
   subset_it_mock <- function(filepaths) {
