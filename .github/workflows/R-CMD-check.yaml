@@ -25,18 +25,13 @@ jobs:
           use-public-rspm: true
           r-version: '4.1.2'
 
-      - uses: r-lib/actions/setup-renv@v2
-        with:
-          cache-version: 2
-
       - name: Install linux libraries
         run: |
           sudo apt-get install -yqq --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev
-          
-      - name: Restore packages
-        shell: Rscript {0}
-        run: |
-          renv::restore()
+
+      - uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 2
 
       - name: Check R Package
         uses: r-lib/actions/check-r-package@v1
