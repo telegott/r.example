@@ -35,6 +35,7 @@ On GitHub,
 Then push your changes on a new branch.
 
 Workflows:
+
 - _Do not use subdirectories in `R/`, the package structure does not allow this._ 
 - Building the packages add _everything_ in your package directory to your build process. Exclude _everything_ that's not needed for that to the `.Rbuildignore` (be aware it has a stricter syntax than other ignore-files, check examples).
 - _Never_ install the package locally from within the package folder! If you need to have the functionality available in another local package, that other package should install it from Github.
