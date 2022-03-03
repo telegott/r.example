@@ -1,5 +1,5 @@
 process <- function(input) {
-  rnorm(1)
+  stats::rnorm(1)
 }
 
 process_all <- function(inputs) {
