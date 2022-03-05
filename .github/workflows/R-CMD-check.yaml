@@ -26,8 +26,11 @@ jobs:
           r-version: '4.1.2'
 
       - name: Install linux libraries
-        run: |
-          sudo apt-get install -yqq --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev
+        run: >
+          sudo apt-get install -yqq --no-install-recommends 
+            libcurl4-openssl-dev 
+            libssl-dev 
+            libxml2-dev
 
       - uses: r-lib/actions/setup-renv@v2
         with:

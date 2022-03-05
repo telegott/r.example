@@ -2,7 +2,6 @@ FROM rocker/r-ver:4.1.2 AS base
 RUN set -xe \
     && apt-get update \
     && apt-get install -y \
-        make \
         git-core \
         libssl-dev \
         libcurl4-openssl-dev \
