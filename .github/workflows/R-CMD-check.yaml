@@ -29,9 +29,19 @@ jobs:
         run: |
           sudo apt-get install -yqq --no-install-recommends libcurl4-openssl-dev libssl-dev libxml2-dev
 
-      - uses: r-lib/actions/setup-renv@v2
+      - name: Cache packages
+        uses: actions/cache@v1
         with:
-          cache-version: 2
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
+
+      - name: Restore packages
+        shell: Rscript {0}
+        run: |
+          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+          renv::restore()
 
       - name: Check R Package
         uses: r-lib/actions/check-r-package@v1

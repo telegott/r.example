@@ -1,6 +1,7 @@
 # r.example
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/telegott/r.example/workflows/R-CMD-check/badge.svg)](https://github.com/telegott/r.example/actions)
 [![Codecov test coverage](https://codecov.io/gh/telegott/r.example/branch/main/graph/badge.svg)](https://app.codecov.io/gh/telegott/r.example?branch=main)
 <!-- badges: end -->
 
@@ -37,6 +38,10 @@ R and the packages and checks your package. Only if you get a green check, you s
 That means your `main` branch is always in a workign state. If you add libraries such as `sf` that need system geo
 libraries, make sure to include these in the appropriate section of the `R-CMD-check.yml` in the linux package section
 so the "computer" on Github also installs these.
+
+Add badge:
+- `usethis::use_github_action("test-coverage")` (delete the specific coverage action again)
+- `use_github_actions_badge(name = "R-CMD-check", repo_spec = NULL)`
 
 On GitHub,
 
