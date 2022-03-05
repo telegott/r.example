@@ -16,7 +16,7 @@ check() {
   docker run \
     --rm \
     $TAG \
-    R -e "devtools::check()"
+    Rscript -e "devtools::check()"
 }
 
 case $TASK in
