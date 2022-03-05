@@ -3,3 +3,6 @@
 ^\.github$
 ^LICENSE\.md$
 ^.idea$
+^Dockerfile$
+^\.dockerignore$
+^scripts$
