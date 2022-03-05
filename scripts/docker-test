@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+TASK=$1
+TAG=r.example-test
+TARGET=with-packages
+
+build() {
+  docker build \
+    --tag $TAG \
+    --target=$TARGET \
+    --file Dockerfile \
+    .
+}
+
+check() {
+  docker run \
+    --rm \
+    $TAG \
+    R -e "devtools::check()"
+}
+
+case $TASK in
+  build)
+    build;;
+  check)
+    build && check;;
+  *)
+    echo "Unknown command '$TASK'";;
+esac
