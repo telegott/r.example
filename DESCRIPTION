@@ -15,7 +15,9 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports:
     fs,
-    purrr
+    modules,
+    purrr,
+    data.table
 Suggests:
     covr,
     DT,
